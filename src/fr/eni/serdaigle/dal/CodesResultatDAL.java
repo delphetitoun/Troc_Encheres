@@ -8,8 +8,8 @@ public abstract class CodesResultatDAL {
 	/**
 	 * Echec général quand erreur à l'insertion
 	 */
-	public static final int INSERT_OBJET_ECHEC = 10000;
+	public static final int SELECT_LOGIN_ECHEC = 10000;
 	
-	public static final int SELECT_ALL_ECHEC = 10001;
+	public static final int INSERT_USER_ECHEC = 10001;
 
 }
