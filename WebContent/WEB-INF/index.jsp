@@ -12,7 +12,7 @@
 
  <div id="container">
           
-          <h1>Filtres :</h1>
+          <h1>FILTRES :</h1>
             <form action="" method="post">
    
                 
