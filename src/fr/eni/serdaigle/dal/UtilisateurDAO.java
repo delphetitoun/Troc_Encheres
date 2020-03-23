@@ -10,8 +10,7 @@ public interface UtilisateurDAO {
 
 	List<Utilisateur> select() throws BusinessException;
 	
-	Utilisateur select(int id) throws BusinessException;
-	
 	// boolean en retour,  si true le combo pseudo / mdp existe en base de donnée
-	 boolean selectConnexion(String identifiant, String password) throws BusinessException;
+	Utilisateur selectConnexion(String identifiant, String password) throws BusinessException;
+
 }
