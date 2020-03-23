@@ -119,18 +119,6 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		return utilisateur;
 	}
 
-	@Override
-	public Utilisateur select(int id) throws BusinessException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public boolean selectConnexion(String identifiant, String password) throws BusinessException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	
 
 }
