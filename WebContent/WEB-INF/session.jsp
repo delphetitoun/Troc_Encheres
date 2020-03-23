@@ -7,7 +7,7 @@
 <title>Session</title>
 </head>
 <body>
-	<h1>ENI-Enchères</h1>
+	<%@ include file="entete.html" %>
 	
 	
 	
@@ -16,34 +16,38 @@
             <form action="" method="post">
    
                 
-                <label><b>Identifiant : </b></label>
-                <input type="text" placeholder="Entrer votre identifiant" name="username" required>
+                <label for="username"><b>Identifiant : </b></label>
+                <input type="text" placeholder="Entrer votre identifiant" id="username" name="username" required>
 
-				</br>
+				<br>
 
-                <label><b>Mot de passe :</b></label>
-                <input type="password" placeholder="Entrer votre mot de passe" name="password" required>
-				</br>
+                <label for="password"><b>Mot de passe :</b></label>
+                <input type="password" placeholder="Entrer votre mot de passe" id="password" name="password" required>
+				<br>
 
-				<input type="button" id="connexion" name="connexion" value="Connexion">
+				
+				<button id="connexion" name="connexion">
+            	Connexion
+            	</button>
 				
 				
-				<input type="checkbox" id="remember" name="remember" value="Se souvenir de moi">
-				<label><b>Se souvenir de moi</b></label>
+				<input type="checkbox" id="remember" name="remember" value="remember">
+				<label for="remember" ><b>Se souvenir de moi</b></label>
 								
                 <a id="ForgotPassword" href="">Mot de passe oublié</a>
-            	</br>
+            	<br>
             					
-            					
-				<input type="button" id="creaCompte" name="creaCompte" value="Créer un compte">
             
+            	<button id="creaCompte" name="creaCompte">
+            	Créer un compte
+            	</button>
             
             </form>
         </div>
 	
 
 	
-	
+	<%@ include file="piedDePage.html" %>
 	
 </body>
 </html>
