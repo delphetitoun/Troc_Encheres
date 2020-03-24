@@ -27,17 +27,22 @@
 			</div>
 			
 			<div class="col-lg-6 col-sm-12">
-				<a href="connexion">S'inscrire - se connecter</a>
+				<c:if test="${utilisateur == null}"> 
+					<a href="connexion">S'inscrire - se connecter</a>
+				</c:if>	
 			</div>
 
 			<div class="col-lg-6 col-sm-12">
 				<a href="${pageContext.request.contextPath}/.jsp">Vendre un article</a> 
 				<a href="${pageContext.request.contextPath}/.jsp">Mon profil</a> 
-				<a href="${pageContext.request.contextPath}/.jsp">Déconnexion</a>
+				
+				<c:if test="${utilisateur != null}"> 
+					<a href="${pageContext.request.contextPath}/.jsp">Déconnexion</a>
+				</c:if>
 			</div>
 			
 			<div class="col-lg-6 col-sm-12">
-				<p>${pseudo} est connectée</p>
+				<p>${utilisateur.pseudo} est connectée</p>
 			</div>
 
 
