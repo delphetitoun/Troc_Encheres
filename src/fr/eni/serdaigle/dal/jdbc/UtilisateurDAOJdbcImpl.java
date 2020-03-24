@@ -17,6 +17,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private static final String INSERT = "INSERT INTO UTILISATEURS(pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe) VALUES (?,?,?,?,?,?,?,?,?);";
 	private static final String SELECT_CONNEXION ="SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur FROM UTILISATEURS WHERE (pseudo=? and mot_de_passe =?) or(email=? and mot_de_passe=?);" ;
 	private static final String SELECT_BY_ID ="" ;
+	private static final String SELECT_BY_PSEUDO ="SELECT no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe, credit, administrateur FROM UTILISATEURS WHERE pseudo=?" ;
 	private static final String SELECT_ALL ="" ;
 	
 
@@ -102,6 +103,7 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 	private Utilisateur mappingUtilisateur(ResultSet rs) throws SQLException {
 		Utilisateur utilisateur = new Utilisateur();
 		utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
+		utilisateur.setPseudo(rs.getString("pseudo"));
 		utilisateur.setNom(rs.getString("nom"));
 		utilisateur.setPrenom(rs.getString("prenom"));
 		utilisateur.setEmail(rs.getString("email"));
@@ -119,6 +121,24 @@ public class UtilisateurDAOJdbcImpl implements UtilisateurDAO {
 		return utilisateur;
 	}
 
-
+	public Utilisateur selectPseudo(String pseudo) throws BusinessException {
+		try (Connection cnx = ConnectionProvider.getConnection();
+				PreparedStatement psmt = cnx.prepareStatement(SELECT_BY_PSEUDO);) {
+			psmt.setString(1, pseudo);
+			
+			ResultSet rs = psmt.executeQuery();
+			Utilisateur utilisateur = null;
+			if (rs.next()) {
+				utilisateur = mappingUtilisateur(rs);
+			}
+			return utilisateur;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			BusinessException be = new BusinessException();
+			be.ajouterErreur(CodesResultatDAL.SELECT_LOGIN_ECHEC);
+			throw be;
+		}
+		
+	}
 
 }
