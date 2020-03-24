@@ -38,7 +38,19 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		session.setAttribute("noUtilisateur", noUtilisateur);
 		session.setAttribute("pseudo", pseudo);
+		session.setAttribute("nom", nom);
+		session.setAttribute("prenom", prenom);
+		session.setAttribute("email", email);
+		session.setAttribute("telephone", telephone);
+		session.setAttribute("rue", rue);
+		session.setAttribute("codePostal", codePostal);
+		session.setAttribute("ville", ville);
+		session.setAttribute("motDePasse", motDePasse);
+		session.setAttribute("administrateur", administrateur);
+		session.setAttribute("credit", credit);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/index.jsp");
 		rd.forward(request, response);
 	}
