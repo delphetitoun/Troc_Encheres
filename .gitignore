@@ -26,3 +26,4 @@ hs_err_pid*
 /bin/
 
 /src/fr/eni/serdaigle/dal/ConnectionProvider.java
+/WebContent/META-INF/context.xml
