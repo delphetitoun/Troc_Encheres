@@ -6,7 +6,10 @@ package fr.eni.serdaigle.bll;
 public abstract class CodesResultatBLL {
 
 	
-	public static final int DATE_HEURE_ERREUR = 20000;
-	public static final int ALIMENT_OBLIGATOIRE = 20001;
-	public static final int ALIMENT_TAILLE_DEPASSEE = 20002;
+	public static final int CHAMP_OBLIGATOIRE = 20000;
+	public static final int CHAMP_TAILLE_DEPASSEE  = 20001;
+	
+	
+	
+	
 }
