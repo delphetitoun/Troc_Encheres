@@ -27,7 +27,7 @@
 			</div>
 			
 			<div class="col-lg-6 col-sm-12">
-				<a href="${pageContext.request.contextPath}/session.jsp">S'inscrire - se connecter</a>
+				<a href="connexion">S'inscrire - se connecter</a>
 			</div>
 
 			<div class="col-lg-6 col-sm-12">
@@ -37,7 +37,7 @@
 			</div>
 			
 			<div class="col-lg-6 col-sm-12">
-				<a href="${pseudo}"> est connectée</a>
+				<p>${pseudo} est connectée</p>
 			</div>
 
 
