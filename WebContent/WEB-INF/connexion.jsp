@@ -24,14 +24,17 @@
 
 			<div class="col-lg-6 col-sm-12">
 
+
 				<form action="login" method="post">
+				
+			<c:if test="${errorLogin != null}"> 
 
 					<div class="col-lg-6 col-sm-4">
 						<div class="alert alert-danger" role="alert">
 						  <p>${errorLogin}</p>
 						</div>
 					</div>
-					
+			</c:if>
 						<label for="username"><b>Identifiant : </b></label> 
 						<input type="text" placeholder="Entrer votre identifiant" id="username" name="username" required> <br> 
 					
